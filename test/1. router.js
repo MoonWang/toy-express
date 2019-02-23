@@ -10,7 +10,15 @@ app.get('/moon', (req, res) => {
 });
 // $ curl -v -X POST http://localhost:8080/wang
 app.post('/wang', (req, res) => {
-    res.end('wang \r\n');
+    res.end('post wang \r\n');
 });
+
+app.all('/wang', (req, res) => {
+    res.end('all wang \r\n');
+});
+
+app.all('*', (req, res) => {
+    res.end('404');
+})
 
 app.listen(8080, () => console.log('启动8080端口服务器'));
