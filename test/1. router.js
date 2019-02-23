@@ -8,8 +8,9 @@ const app = express();
 app.get('/moon', (req, res) => {
     res.end('moon');
 });
-app.get('/wang', (req, res) => {
-    res.end('wang');
+// $ curl -v -X POST http://localhost:8080/wang
+app.post('/wang', (req, res) => {
+    res.end('wang \r\n');
 });
 
 app.listen(8080, () => console.log('启动8080端口服务器'));
