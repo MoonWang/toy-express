@@ -1,0 +1,26 @@
+{
+  "name": "toy-express",
+  "version": "1.0.0",
+  "description": "> 实现一个玩具版的 Express 框架，理解框架设计和使用。",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoonWang/toy-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoonWang/toy-express/issues"
+  },
+  "homepage": "https://github.com/MoonWang/toy-express#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
