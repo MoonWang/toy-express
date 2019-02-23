@@ -1,6 +1,6 @@
 # 玩具版 Express 框架实现
 
-> 实现一个玩具版的 Express 框架，理解框架设计和使用。
+> 实现一个玩具版的 Express 框架，理解框架设计和使用。采用 TDD 开发模式。
 
 ## 1. 测试说明
 
@@ -52,3 +52,6 @@ app.use((err, req, res, next) => {
 - req.xx 获取请求参数
     - 通过内置中间件并默认调用的方式，将请求的参数绑定到 req 对象上，方便直接调用
     - eg：req.query、req.path、req.hostname
+- req.params 获取路由路径参数
+    1. 在设置路由(eg: app.get)时，将路径中的`参数 name 的数组`缓存到路由队列中，并将路径 path 替换成对应的正则表达式备用
+    2. 在处理请求时，如果有参数 name 的数组，则使用正则表达式进行匹配，来获取 params，并添加到 req 对象上
