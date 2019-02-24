@@ -14,7 +14,7 @@
 
 - 以 get 请求为例：
     1. 通过 get 方法设定路由，框架内部对规则进行缓存
-    2. 监听客户端请求时，匹配哦用户请求的 method 和 pathname 来调用缓存的路由 hanlder
+    2. 监听客户端请求时，匹配哦用户请求的 method 和 pathname 来调用缓存的路由 handler
 - 通过 method 处理
     - 使用 http.METHODS 来遍历缓存路由规则，不需要再声明一系列缓存方法
 - 特殊规则
@@ -55,3 +55,7 @@ app.use((err, req, res, next) => {
 - req.params 获取路由路径参数
     1. 在设置路由(eg: app.get)时，将路径中的`参数 name 的数组`缓存到路由队列中，并将路径 path 替换成对应的正则表达式备用
     2. 在处理请求时，如果有参数 name 的数组，则使用正则表达式进行匹配，来获取 params，并添加到 req 对象上
+    - app.param(name, handler) 方法
+        - 说明：任意路由路径中，有 name 这个 param ，都会调用此方法定义的 handler ，用于指定 name 的公用操作处理提取
+        1. 
+- res.send 智能响应
