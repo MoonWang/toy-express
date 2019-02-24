@@ -58,4 +58,6 @@ app.use((err, req, res, next) => {
     - app.param(name, handler) 方法
         - 说明：任意路由路径中，有 name 这个 param ，都会调用此方法定义的 handler ，用于指定 name 的公用操作处理提取
         1. 
-- res.send 智能响应
+- res.send([body]) 智能响应
+    - 参数为要响应的内容，可以智能处理不同类型的数据，在输出响应时会自动进行一些设置，比如HEAD信息、HTTP缓存支持等等
+    - 此处只处理了 Content-type 和 statusCode
